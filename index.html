@@ -417,6 +417,57 @@
       alert("Erro de entrada: Por favor, insira números inteiros válidos.");
     }
   }
+
+  function interfacePergaminhos() {
+  let nivelEntrada, quantidadeEntrada;
+
+  const interface = tk.Toplevel(window);
+  interface.title("Gerador de Pergaminho de Magia");
+  interface.geometry("300x200");
+
+  const windowWidth = 300;
+  const windowHeight = 200;
+
+  // Calculando a posição para centralizar a janela na tela
+  const screenWidth = interface.winfo_screenwidth();
+  const screenHeight = interface.winfo_screenheight();
+
+  const xCoordinate = parseInt((screenWidth / 2) - (windowWidth / 2));
+  const yCoordinate = parseInt((screenHeight / 2) - (windowHeight / 2));
+
+  interface.geometry(`${windowWidth}x${windowHeight}+${xCoordinate}+${yCoordinate}`);
+
+  const levelLabel = document.createElement("label");
+  levelLabel.textContent = "Nível da Magia:";
+  interface.appendChild(levelLabel);
+
+  nivelEntrada = document.createElement("input");
+  nivelEntrada.type = "number";
+  interface.appendChild(nivelEntrada);
+
+  const quantityLabel = document.createElement("label");
+  quantityLabel.textContent = "Quantidade de Pergaminhos:";
+  interface.appendChild(quantityLabel);
+
+  quantidadeEntrada = document.createElement("input");
+  quantidadeEntrada.type = "number";
+  interface.appendChild(quantidadeEntrada);
+
+  const calculateButton = document.createElement("button");
+  calculateButton.textContent = "Gerar";
+  calculateButton.addEventListener("click", () => pergaminhoAleatorio());
+  interface.appendChild(calculateButton);
+
+  calculateButton.style.position = "absolute";
+  calculateButton.style.left = "50%";
+  calculateButton.style.top = "50%";
+  calculateButton.style.transform = "translate(-50%, -50%)";
+}
+
+const generateButton = document.createElement("button");
+generateButton.textContent = "Gerador de Pergaminhos";
+generateButton.addEventListener("click", () => interfacePergaminhos());
+window.appendChild(generateButton);
     </script>
   </head>
   <body>
