@@ -383,7 +383,7 @@ function pergaminhoAleatorio() {
       ],
     };
   
-try {
+ try {
     const nivel = parseInt(document.getElementById("nivel_entrada").value);
     const quantidade = parseInt(document.getElementById("quantidade_entrada").value);
     let pergaminhosEscolhidos = [];
@@ -397,9 +397,11 @@ try {
       const magiasNivel = dicionarioMagias[`magias_nivel_${nivel}`];
       const numMagias = magiasNivel.length;
 
+      // Embaralhar as magias aleatoriamente
+      const magiasEmbaralhadas = shuffleArray(magiasNivel);
+
       for (let i = 0; i < quantidade; i++) {
-        const indiceAleatorio = Math.floor(Math.random() * numMagias);
-        const magiaEscolhida = magiasNivel[indiceAleatorio];
+        const magiaEscolhida = magiasEmbaralhadas[i % numMagias]; // Selecionar magias em ordem cíclica
         pergaminhosEscolhidos.push(`- ${magiaEscolhida}`);
       }
 
@@ -411,6 +413,15 @@ try {
   } catch (error) {
     alert("Erro de entrada: Por favor, insira números inteiros válidos.");
   }
+}
+
+// Função para embaralhar um array usando o algoritmo Fisher-Yates
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function interfacePergaminhos() {
