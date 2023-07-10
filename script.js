@@ -433,25 +433,27 @@ function interfacePergaminhos() {
   interface.geometry(`${windowWidth}x${windowHeight}+${xCoordinate}+${yCoordinate}`);
 
   const levelLabel = document.createElement("label");
-  levelLabel.textContent = "Nível da Magia:";
-  interface.appendChild(levelLabel);
+levelLabel.textContent = "Nível da Magia:";
+interface.appendChild(levelLabel);
 
-  nivelEntrada = document.createElement("input");
-  nivelEntrada.type = "number";
-  interface.appendChild(nivelEntrada);
+nivelEntrada = document.createElement("input");
+nivelEntrada.type = "number";
+nivelEntrada.inputmode = "numeric";
+interface.appendChild(nivelEntrada);
 
-  const quantityLabel = document.createElement("label");
-  quantityLabel.textContent = "Quantidade de Pergaminhos:";
-  interface.appendChild(quantityLabel);
+const quantityLabel = document.createElement("label");
+quantityLabel.textContent = "Quantidade de Pergaminhos:";
+interface.appendChild(quantityLabel);
 
-  quantidadeEntrada = document.createElement("input");
-  quantidadeEntrada.type = "number";
-  interface.appendChild(quantidadeEntrada);
+quantidadeEntrada = document.createElement("input");
+quantidadeEntrada.type = "number";
+quantidadeEntrada.inputmode = "numeric"; 
+interface.appendChild(quantidadeEntrada);
 
-  const calculateButton = document.createElement("button");
-  calculateButton.textContent = "Gerar";
-  calculateButton.addEventListener("click", () => pergaminhoAleatorio());
-  interface.appendChild(calculateButton);
+const calculateButton = document.createElement("button");
+calculateButton.textContent = "Gerar";
+calculateButton.addEventListener("click", () => pergaminhoAleatorio());
+interface.appendChild(calculateButton);
 
   calculateButton.style.position = "absolute";
   calculateButton.style.left = "50%";
