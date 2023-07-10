@@ -1,5 +1,5 @@
 function pergaminhoAleatorio() {
-    const dicionarioMagias = {
+        const dicionarioMagias = {
       magias_nivel_0: [
         "Amizade",
         "Ataque Certeiro",
@@ -412,79 +412,32 @@ function pergaminhoAleatorio() {
     }
   }
 
-  try {
-    const nivel = parseInt(document.getElementById("nivel_entrada").value);
-    const quantidade = parseInt(document.getElementById("quantidade_entrada").value);
-    let pergaminhosEscolhidos = [];
+ try {
+          const nivel = parseInt(document.getElementById("nivel_entrada").value);
+          const quantidade = parseInt(document.getElementById("quantidade_entrada").value);
+          let pergaminhosEscolhidos = [];
 
-    if (nivel < 1 || nivel > 9 || quantidade <= 0) {
-      alert("Erro de entrada: Insira valores positivos para o nível e quantidade.");
-      return;
-    }
+          if (nivel < 0 || nivel > 9 || quantidade <= 0) {
+            alert("Erro de entrada: Insira valores positivos para o nível e quantidade.");
+            return;
+          }
 
-    if (nivel >= 1 && nivel <= 9) {
-      const magiasNivel = dicionarioMagias[`magias_nivel_${nivel}`];
-      const numMagias = magiasNivel.length;
+          if (nivel >= 0 && nivel <= 9) {
+            const magiasNivel = dicionarioMagias[`magias_nivel_${nivel}`];
+            const numMagias = magiasNivel.length;
 
-      for (let i = 0; i < quantidade; i++) {
-        const indiceMagia = Math.floor(Math.random() * numMagias);
-        const magiaEscolhida = magiasNivel[indiceMagia];
-        pergaminhosEscolhidos.push(`- ${magiaEscolhida}`);
+            for (let i = 0; i < quantidade; i++) {
+              const indiceMagia = Math.floor(Math.random() * numMagias);
+              const magiaEscolhida = magiasNivel[indiceMagia];
+              pergaminhosEscolhidos.push(`- ${magiaEscolhida}`);
+            }
+
+            const mensagem = `Pergaminhos de ${nivel}° nível gerados:\n\n${pergaminhosEscolhidos.join("\n")}`;
+            alert(mensagem);
+          } else {
+            alert("Erro de entrada: Insira um nível de 0 a 9.");
+          }
+        } catch (error) {
+          alert("Erro de entrada: Por favor, insira números inteiros válidos.");
+        }
       }
-
-      const mensagem = `Pergaminhos de ${nivel}° nível gerados:\n\n${pergaminhosEscolhidos.join("\n")}`;
-      alert(mensagem);
-    } else {
-      alert("Erro de entrada: Insira um nível de 1 a 9.");
-    }
-  } catch (error) {
-    alert("Erro de entrada: Por favor, insira números inteiros válidos.");
-  }
-
-function interfacePergaminhos() {
-  let nivelEntrada, quantidadeEntrada;
-
-  const interface = tk.Toplevel(window);
-  interface.title("Gerador de Pergaminho de Magia");
-  interface.geometry("300x200");
-
-  const windowWidth = 300;
-  const windowHeight = 200;
-
-  // Calculando a posição para centralizar a janela na tela
-  const screenWidth = interface.winfo_screenwidth();
-  const screenHeight = interface.winfo_screenheight();
-
-  const xCoordinate = parseInt((screenWidth / 2) - (windowWidth / 2));
-  const yCoordinate = parseInt((screenHeight / 2) - (windowHeight / 2));
-
-  interface.geometry(`${windowWidth}x${windowHeight}+${xCoordinate}+${yCoordinate}`);
-
-  const levelLabel = document.createElement("label");
-levelLabel.textContent = "Nível da Magia:";
-interface.appendChild(levelLabel);
-
-nivelEntrada = document.createElement("input");
-nivelEntrada.type = "number";
-nivelEntrada.inputmode = "numeric"; // Remover as setinhas
-interface.appendChild(nivelEntrada);
-
-const quantityLabel = document.createElement("label");
-quantityLabel.textContent = "Quantidade de Pergaminhos:";
-interface.appendChild(quantityLabel);
-
-quantidadeEntrada = document.createElement("input");
-quantidadeEntrada.type = "number";
-quantidadeEntrada.inputmode = "numeric"; // Remover as setinhas
-interface.appendChild(quantidadeEntrada);
-
-const calculateButton = document.createElement("button");
-calculateButton.textContent = "Gerar";
-calculateButton.addEventListener("click", () => pergaminhoAleatorio());
-interface.appendChild(calculateButton);
-}
-
-const generateButton = document.createElement("button");
-generateButton.textContent = "Gerador de Pergaminhos";
-generateButton.addEventListener("click", () => interfacePergaminhos());
-window.appendChild(generateButton);
