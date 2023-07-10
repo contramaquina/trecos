@@ -1,5 +1,5 @@
 function pergaminhoAleatorio() {
-        const dicionarioMagias = {
+const dicionarioMagias = {
       magias_nivel_0: [
         "Amizade",
         "Ataque Certeiro",
@@ -411,33 +411,32 @@ function pergaminhoAleatorio() {
       alert("Erro de entrada: Por favor, insira números inteiros válidos.");
     }
   }
-
  try {
-          const nivel = parseInt(document.getElementById("nivel_entrada").value);
-          const quantidade = parseInt(document.getElementById("quantidade_entrada").value);
-          let pergaminhosEscolhidos = [];
+    const nivel = parseInt(document.getElementById("nivel_entrada").value);
+    const quantidade = parseInt(document.getElementById("quantidade_entrada").value);
+    let pergaminhosEscolhidos = [];
 
-          if (nivel < 0 || nivel > 9 || quantidade <= 0) {
-            alert("Erro de entrada: Insira valores positivos para o nível e quantidade.");
-            return;
-          }
+    if (nivel < 0 || nivel > 9 || quantidade <= 0) {
+      alert("Erro de entrada: Insira valores positivos para o nível e quantidade.");
+      return;
+    }
 
-          if (nivel >= 0 && nivel <= 9) {
-            const magiasNivel = dicionarioMagias[`magias_nivel_${nivel}`];
-            const numMagias = magiasNivel.length;
+    if (nivel >= 0 && nivel <= 9) {
+      const magiasNivel = dicionarioMagias[`magias_nivel_${nivel}`];
+      const numMagias = magiasNivel.length;
 
-            for (let i = 0; i < quantidade; i++) {
-              const indiceMagia = Math.floor(Math.random() * numMagias);
-              const magiaEscolhida = magiasNivel[indiceMagia];
-              pergaminhosEscolhidos.push(`- ${magiaEscolhida}`);
-            }
-
-            const mensagem = `Pergaminhos de ${nivel}° nível gerados:\n\n${pergaminhosEscolhidos.join("\n")}`;
-            alert(mensagem);
-          } else {
-            alert("Erro de entrada: Insira um nível de 0 a 9.");
-          }
-        } catch (error) {
-          alert("Erro de entrada: Por favor, insira números inteiros válidos.");
-        }
+      for (let i = 0; i < quantidade; i++) {
+        const indiceMagia = Math.floor(Math.random() * numMagias);
+        const magiaEscolhida = magiasNivel[indiceMagia];
+        pergaminhosEscolhidos.push(`- ${magiaEscolhida}`);
       }
+
+      const mensagem = `Pergaminhos de ${nivel}° nível gerados:\n\n${pergaminhosEscolhidos.join("\n")}`;
+      alert(mensagem);
+    } else {
+      alert("Erro de entrada: Insira um nível de 0 a 9.");
+    }
+  } catch (error) {
+    alert("Erro de entrada: Por favor, insira números inteiros válidos.");
+  }
+}
