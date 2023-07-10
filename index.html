@@ -389,34 +389,35 @@
       ],
     };
   
-    try {
-      const nivel = parseInt(document.getElementById("nivel_entrada").value);
-      const quantidade = parseInt(
-        document.getElementById("quantidade_entrada").value
-      );
-      let pergaminhosEscolhidos = [];
-  
-      if (nivel < 1 || nivel > 9 || quantidade <= 0) {
-        alert("Erro de entrada: Insira valores positivos para o nível e quantidade.");
-        return;
-      }
-  
-      if (nivel >= 1 && nivel <= 9) {
-        pergaminhosEscolhidos = dicionarioMagias[`magias_nivel_${nivel}`].slice(0, quantidade);
-        pergaminhosEscolhidos = pergaminhosEscolhidos.map(
-          (magia) => `- ${magia}`
-        );
-        const mensagem =
-          `Pergaminhos de ${nivel}° nível gerados:\n\n` +
-          pergaminhosEscolhidos.join("\n");
-        alert(mensagem);
-      } else {
-        alert("Erro de entrada: Insira um nível de 1 a 9.");
-      }
-    } catch (error) {
-      alert("Erro de entrada: Por favor, insira números inteiros válidos.");
+try {
+    const nivel = parseInt(document.getElementById("nivel_entrada").value);
+    const quantidade = parseInt(document.getElementById("quantidade_entrada").value);
+    let pergaminhosEscolhidos = [];
+
+    if (nivel < 1 || nivel > 9 || quantidade <= 0) {
+      alert("Erro de entrada: Insira valores positivos para o nível e quantidade.");
+      return;
     }
+
+    if (nivel >= 1 && nivel <= 9) {
+      const magiasNivel = dicionarioMagias[`magias_nivel_${nivel}`];
+      const numMagias = magiasNivel.length;
+
+      for (let i = 0; i < quantidade; i++) {
+        const indiceAleatorio = Math.floor(Math.random() * numMagias);
+        const magiaEscolhida = magiasNivel[indiceAleatorio];
+        pergaminhosEscolhidos.push(`- ${magiaEscolhida}`);
+      }
+
+      const mensagem = `Pergaminhos de ${nivel}° nível gerados:\n\n${pergaminhosEscolhidos.join("\n")}`;
+      alert(mensagem);
+    } else {
+      alert("Erro de entrada: Insira um nível de 1 a 9.");
+    }
+  } catch (error) {
+    alert("Erro de entrada: Por favor, insira números inteiros válidos.");
   }
+}
 
   function interfacePergaminhos() {
   let nivelEntrada, quantidadeEntrada;
