@@ -72,3 +72,20 @@ function exibir_premios_individuais() {
           pl = (somaRandom(2) * 100).toString();
         }
       }
+  console.log("Prêmios Individuais",
+        "Resultado do dado: " + d100,
+        "Quantidade de cada prêmio:",
+        "Peças de Cobre: " + pc,
+        "Peças de Prata: " + pp,
+        "Peças de Eletrum: " + pe,
+        "Peças de Ouro: " + po,
+        "Peças de Platina: " + pl
+      );
+      
+      document.getElementById("dado_resultado").textContent = "Resultado do dado: " + d100;
+      document.getElementById("pc_quantidade").textContent = "Peças de Cobre: " + pc;
+      document.getElementById("pp_quantidade").textContent = "Peças de Prata: " + pp;
+      document.getElementById("pe_quantidade").textContent = "Peças de Eletrum: " + pe;
+      document.getElementById("po_quantidade").textContent = "Peças de Ouro: " + po;
+      document.getElementById("pl_quantidade").textContent = "Peças de Platina: " + pl;
+    }
