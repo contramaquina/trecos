@@ -6,9 +6,20 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <h1>Trecos & Cacarecos</h1>
-  <p>Trecos, trecos, trecos...</p>
-  
+  <div class="sidebar">
+    <ul class="menu">
+      <li><a href="#" onclick="gerarLoot()">Gerar Loot</a></li>
+      <li><a href="#" onclick="gerarPremiosIndividuais()">Gerar Prêmios Individuais</a></li>
+      <li><a href="#" onclick="gerarNPC()">Gerar NPC</a></li>
+      <li><a href="#" onclick="gerarMisturaPocoes()">Gerar Mistura de Poções</a></li>
+      <li><a href="#" onclick="gerarPergaminhos()">Gerar Pergaminhos</a></li>
+      <li><a href="#" onclick="gerarFiascoPergaminho()">Gerar Fiasco de Pergaminho</a></li>
+      <li><a href="#" onclick="gerarPropriedadesItensMagicos()">Gerar Propriedades de Itens Mágicos</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1>Trecos & Cacarecos</h1>
+    <p>Trecos, trecos, trecos...</p>
   <div id="error-message" style="display: none;"></div>
   
   <form onsubmit="exibir_premios_individuais(); return false;">
@@ -24,5 +35,6 @@
   <p id="pe_quantidade"></p>
   <p id="po_quantidade"></p>
   <p id="pl_quantidade"></p>
+  </div>
 </body>
 </html>
