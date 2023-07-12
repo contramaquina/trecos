@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Título da Minha Página</title>
+  <title>Trecos e Cacarecos</title>
+
   <script>
     function exibir_premios_individuais() {
       var nivel_desafio = parseInt(document.getElementById("nivel_desafio").value);
@@ -101,9 +102,13 @@
   <h1>Trecos & Cacarecos</h1>
   <p>Trecos, trecos, trecos...</p>
   
-  <label for="nivel_desafio">Nível de Desafio:</label>
-  <input type="number" id="nivel_desafio" min="1" max="20">
-  <button onclick="exibir_premios_individuais()">Exibir Prêmios Individuais</button>
+<div id="error-message" style="display: none;"></div>
+  
+  <form onsubmit="exibir_premios_individuais(); return false;">
+    <label for="nivel-desafio">Nível de desafio (1 a 20):</label>
+    <input type="number" id="nivel-desafio" min="1" max="20" required>
+    <button type="submit">Exibir Prêmios Individuais</button>
+  </form>
   
   <h2>Resultado</h2>
   <p id="dado_resultado"></p>
