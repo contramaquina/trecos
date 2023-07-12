@@ -1,10 +1,12 @@
 function exibir_premios_individuais() {
-      var nivel_desafio = parseInt(document.getElementById("nivel_desafio").value);
-      
-      if (isNaN(nivel_desafio) || nivel_desafio < 1 || nivel_desafio > 20) {
-        console.log("Erro: Insira um valor de nível válido (1 a 20).");
-        return;
-      }
+  var nivel_desafio = parseInt(document.getElementById("nivel-desafio").value);
+  var errorMessage = document.getElementById("error-message");
+  
+  if (isNaN(nivel_desafio) || nivel_desafio < 1 || nivel_desafio > 20) {
+    errorMessage.textContent = "Erro: Insira um valor de nível válido (1 a 20).";
+    errorMessage.style.display = "block";
+    return;
+  }
       
       var d100 = Math.floor(Math.random() * 100) + 1;
       var pc = '', pp = '', pe = '', po = '', pl = '';
