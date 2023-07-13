@@ -1,8 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 20px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* isso faz com que o corpo preencha a altura da tela */
+    margin: 0; /* isso remove qualquer espaço indesejado ao redor das bordas */
+    padding: 0; /* isso remove qualquer espaço indesejado ao redor das bordas */
 }
 
 h1 {
@@ -33,4 +36,23 @@ button:hover {
   color: red;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* você pode ajustar a largura como preferir */
+    height: 100vh; /* isso faz com que a barra lateral preencha a altura da tela */
+    background-color: #fff; /* isso define o fundo da barra lateral como branco */
+    overflow-y: auto; /* isso adiciona rolagem se o conteúdo ultrapassar a altura da barra lateral */
+    padding: 10px;
+}
+
+.main-content {
+    width: 60%; /* você pode ajustar a largura como preferir */
+    background-color: #fff; /* isso define o fundo do conteúdo principal como branco */
+    padding: 20px;
+    margin-left: 200px; /* isso empurra o conteúdo principal para a direita, dando espaço para a barra lateral */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* isso adiciona um pouco de sombra ao redor do conteúdo principal para um pouco de profundidade */
 }
