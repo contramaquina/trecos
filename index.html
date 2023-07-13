@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
+  <style>
+        body {
+            transition: background-color 2s ease;
+        }
+    </style>
 </head>
 <body>
   <div class="sidebar">
@@ -36,5 +41,15 @@
   <p id="po_quantidade"></p>
   <p id="pl_quantidade"></p>
   </div>
+  <script>
+        var colors = ["#0099cc", "#cc0000", "#00cc00", "#cccc00", "#cc00cc", "#00cccc", "#cccccc"];
+
+        function changeBackground() {
+            var colorIndex = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[colorIndex];
+        }
+
+        setInterval(changeBackground, 3000);
+    </script>
 </body>
 </html>
