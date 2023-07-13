@@ -50,7 +50,7 @@ button:hover {
 }
 
 .main-content {
-    width: 60%; /* você pode ajustar a largura como preferir */
+    width: 30%; /* você pode ajustar a largura como preferir */
     background-color: #fff; /* isso define o fundo do conteúdo principal como branco */
     padding: 20px;
     margin-left: 200px; /* isso empurra o conteúdo principal para a direita, dando espaço para a barra lateral */
