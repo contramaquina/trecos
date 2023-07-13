@@ -8,6 +8,14 @@ body {
     padding: 0; /* isso remove qualquer espaço indesejado ao redor das bordas */
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* altere para a altura que você deseja para o seu header */
+}
+
 h1 {
   color: #333;
   width: 50%; /* exemplo de largura */
