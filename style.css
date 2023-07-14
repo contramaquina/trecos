@@ -89,6 +89,6 @@ button:hover {
 
 @keyframes changeFontSize {
     0% {font-size: 500%;}
-    200% {font-size: 700%;}
-    400% {font-size: 500%;}
+    50% {font-size: 700%;}
+    100% {font-size: 500%;}
 }
