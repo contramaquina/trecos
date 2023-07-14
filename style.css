@@ -19,7 +19,7 @@ body {
 }
 
 .animated-image {
-    animation: scaleImage 0.5s linear infinite;
+    animation: scaleImage 0.5s linear infinite, rotateImage 2s linear infinite;
     max-height: 90vh;
     max-width: 90vw;
 }
@@ -28,7 +28,9 @@ body {
     0% { transform: scale(0.5); }
     50% { transform: scale(1.5); }
     100% { transform: scale(0.5); }
-    0% { transform: scale(0.5) rotate(0deg); }
-    50% { transform: scale(1.5) rotate(180deg); }
-    100% { transform: scale(0.5) rotate(360deg); }
+}
+
+@keyframes rotateImage {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
