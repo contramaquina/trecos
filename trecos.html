@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="trecos.css">
+</head>
+<body>
+    <header>
+        <h1><a href="#" id="header-link">Trecos e Cacarecos</a></h1>
+    </header>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" id="exibir_premios_individuais">Exibir Prêmios Individuais</a></li>
+            <li><a href="#" id="pergaminho_aleatorio">Pergaminho Aleatório</a></li>
+            <li><a href="#" id="btn-funcao3">Função 3</a></li>
+        </ul>
+    </div>
+    
+    <div id="paginaInicial" class="content" style="display: block;">
+        <h2>Bem-vindo(a) ao Trecos e Cacarecos!</h2>
+        <p>Este site é dedicado a todos os amantes de jogos de RPG e jogadores de D&D. Aqui, você pode gerar prêmios individuais baseados no nível de desafio, descobrir mais sobre as diferentes funções em um RPG, e muito mais! Explore as opções do menu ao lado para começar.</p>
+    </div>
+
+    <div id="sobre" class="content" style="display: none;">
+        <!-- Aqui você coloca o conteúdo que estava em "sobre.html" -->
+    </div>
+
+    <div id="premiosIndividuais" class="content" style="display: none;">
+        <div class="user-input">
+            <div id="error-message" style="display: none; color: rgb(0, 0, 0);"></div>
+            <label for="nivel_desafio">Nível de desafio:</label>
+            <input id="nivel_desafio" type="number" min="1" max="20">
+            <button onclick="exibir_premios_individuais()">Gerar Prêmios</button>
+        </div>
+        
+        <div class="output">
+            <div class="output">
+                <p id="dado_resultado"></p>
+                <p id="pc_quantidade"></p>
+                <p id="pp_quantidade"></p>
+                <p id="pe_quantidade"></p>
+                <p id="po_quantidade"></p>
+                <p id="pl_quantidade"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="pergaminhoAleatorio" class="content" style="display: none;">
+        <div class="user-input">
+            <div id="pergaminho-error-message" style="display: none; color: rgb(0, 0, 0);"></div>
+            <label for="nivel_pergaminho">Nível do Pergaminho:</label>
+            <input id="nivel_pergaminho" type="number" min="0" max="9">
+            <label for="quantidade_pergaminho">Quantidade:</label>
+            <input id="quantidade_pergaminho" type="number" min="1">
+            <button onclick="pergaminho_aleatorio()">Gerar Pergaminhos</button>
+        </div>
+        
+        <div class="output">
+            <p id="pergaminho_gerado"></p>
+        </div>
+    </div>
+    
+    <script src="trecos.js"></script>
+</body>
+</html>
