@@ -9,7 +9,7 @@ body {
 }
 
 p {
-    animation: changeFontSize 1,5s infinite; 
+    animation: changeFontSize 0,5s infinite; 
 }
 
 header {
