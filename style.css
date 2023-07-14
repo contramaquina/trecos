@@ -9,8 +9,8 @@ body {
 }
 
 .animated-image {
-    animation: changeSize 2s infinite;
-    width: 50%;
+    animation: changeSize 0.2s infinite;
+    width: 20%;
     height: auto;
 }
 
