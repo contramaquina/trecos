@@ -9,7 +9,7 @@ body {
 }
 
 p {
-    animation: changeFontSize 3s infinite; 
+    animation: changeFontSize 1,5s infinite; 
 }
 
 header {
@@ -88,7 +88,7 @@ button:hover {
 }
 
 @keyframes changeFontSize {
-    0% {font-size: 100%;}
-    50% {font-size: 110%;}
-    100% {font-size: 100%;}
+    0% {font-size: 120%;}
+    50% {font-size: 150%;}
+    100% {font-size: 120%;}
 }
