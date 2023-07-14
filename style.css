@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    animation: changeFontSize 3s infinite; /* adicionar esta linha para animação de tamanho de fonte */
 }
 
 header {
@@ -14,8 +15,11 @@ header {
     justify-content: center;
     align-items: center;
     height: 200px;
+    position: sticky; /* adicionar esta linha para fixar o cabeçalho no topo */
+    top: 0;
+    background-color: #fff; /* adicionar esta linha para tornar o fundo do cabeçalho branco */
+    z-index: 100;
 }
-
 h1 {
     color: #333;
     width: 50%;
@@ -73,4 +77,10 @@ button:hover {
     padding: 20px;
     margin-left: 200px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@keyframes changeFontSize {
+    0% {font-size: 100%;}
+    50% {font-size: 110%;}
+    100% {font-size: 100%;}
 }
