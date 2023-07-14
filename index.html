@@ -4,33 +4,8 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
-  <style>
-        body {
-            transition: background-color 0.2s ease;
-            margin: 0;
-            background-color: white; /* Make the body background white */
-        }
-        
-        .container {
-            max-width: 960px; /* Adjust this to whatever width you want */
-            margin: 0 auto; /* Center the container */
-            padding: 0 20px; /* Some padding on the sides */
-        }
-        
-        header {
-            width: 100%;
-            position: sticky; /* Stick to the top when scrolling */
-            top: 0;
-            background: white; /* Make the header background white */
-            z-index: 100;
-        }
-    </style>
-  
+</head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Prêmios individuais</h1>
-    </header>
   <div class="sidebar">
     <ul class="menu">
       <li><a href="#" onclick="gerarLoot()">Gerar Loot</a></li>
@@ -42,7 +17,7 @@
       <li><a href="#" onclick="gerarPropriedadesItensMagicos()">Gerar Propriedades de Itens Mágicos</a></li>
     </ul>
   </div>
-  <div class="main-content">
+  <div class="container">
     <header>
       <h1>Trecos & Cacarecos</h1>
       <p>Trecos, trecos, trecos...</p>
